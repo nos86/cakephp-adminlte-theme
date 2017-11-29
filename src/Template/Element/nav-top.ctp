@@ -9,7 +9,7 @@ if (file_exists($file)) {
     echo ob_get_clean();
 } else {
 ?>
-<nav class="navbar navbar-static-top">
+<nav class="navbar navbar-static-top"">
   <!-- Sidebar toggle button-->
   <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
     <span class="sr-only">Toggle navigation</span>
