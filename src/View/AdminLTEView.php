@@ -1,11 +1,11 @@
 <?php
 namespace AdminLTE\View;
 
-use \App\View\AppView;
+use \Cake\View\View;
 use \Cake\Core\App;
 use \Cake\Utility\Inflector;
 
-class AdminLTEView extends AppView
+class AdminLTEView extends View
 {
     protected function _paths($plugin = null, $cached = true)
     {
