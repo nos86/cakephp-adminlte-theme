@@ -15,14 +15,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
     <?php echo $this->Html->css('AdminLTE.AdminLTE.min'); ?>
-    <!-- Material Design -->
-    <?php echo $this->Html->css('AdminLTE.bootstrap-material-design.min'); ?>
-    <?php echo $this->Html->css('AdminLTE.ripples.min'); ?>
-    <?php echo $this->Html->css('AdminLTE.MaterialAdminLTE.min'); ?>
-    <!-- MaterialAdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. --> 
-	<?php echo $this->Html->css('AdminLTE.skins/all-md-skins.min'); ?>
-	
+<!-- AdminLTE Skins. Choose a skin from the css/skins
+    folder instead of downloading all of them to reduce the load. -->
+    <?php echo $this->Html->css('AdminLTE.skins/skin-'. Configure::read('Theme.skin') .'.min'); ?>
+
     <?php echo $this->fetch('css'); ?>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

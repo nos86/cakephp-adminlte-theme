@@ -15,15 +15,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
     <?php echo $this->Html->css('AdminLTE.AdminLTE.min'); ?>
-<!-- AdminLTE Skins. Choose a skin from the css/skins
-    folder instead of downloading all of them to reduce the load. -->
-    <?php echo $this->Html->css('AdminLTE.skins/skin-'. Configure::read('Theme.skin') .'.min'); ?>
-<!--  Material Design -->
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <?php echo $this->Html->css('AdminLTE./material-design/css/materialize', array('media' => 'screen,projection')) ?>
-    
-    <?php echo $this->Html->css('AdminLTE./material-design/css/style', array('media' => 'screen,projection')) ?>
-    
+    <!-- Material Design -->
+    <?php echo $this->Html->css('AdminLTE.bootstrap-material-design.min'); ?>
+    <?php echo $this->Html->css('AdminLTE.ripples.min'); ?>
+    <?php echo $this->Html->css('AdminLTE.MaterialAdminLTE.min'); ?>
+    <!-- MaterialAdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. --> 
+	<?php echo $this->Html->css('AdminLTE.skins/all-md-skins.min'); ?>
+	
     <?php echo $this->fetch('css'); ?>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -33,24 +32,20 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<!-- ADD THE CLASS layout-boxed TO GET A BOXED LAYOUT -->
-<body class="hold-transition skin-<?php echo Configure::read('Theme.skin'); ?> layout-boxed sidebar-mini">
+<body class="hold-transition skin-<?php echo Configure::read('Theme.skin'); ?> sidebar-mini">
     <!-- Site wrapper -->
     <div class="wrapper">
-
         <header class="main-header">
             <!-- Logo -->
             <a href="<?php echo $this->Url->build('/'); ?>" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini"><?php echo Configure::read('Theme.logo.mini') ?></span>
+                <span class="logo-mini"><?php echo Configure::read('Theme.logo.mini'); ?></span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><?php echo Configure::read('Theme.logo.large') ?></span>
+                <span class="logo-lg"><?php echo Configure::read('Theme.logo.large'); ?></span>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <?php echo $this->element('nav-top') ?>
         </header>
-
-        <!-- =============================================== -->
 
         <!-- Left side column. contains the sidebar -->
         <?php echo $this->element('aside-main-sidebar'); ?>
@@ -61,6 +56,7 @@
         <div class="content-wrapper">
 
             <?php echo $this->Flash->render(); ?>
+            <?php echo $this->Flash->render('auth'); ?>
             <?php echo $this->fetch('content'); ?>
 
         </div>
@@ -88,9 +84,6 @@
 <?php echo $this->Html->script('AdminLTE./plugins/fastclick/fastclick'); ?>
 <!-- AdminLTE App -->
 <?php echo $this->Html->script('AdminLTE./js/app.min'); ?>
-<!-- Material Design -->
-<?php echo $this->Html->script('AdminLTE./material-design/js/materialize') ?>
-<?php echo $this->Html->script('AdminLTE./material-design/js/init') ?>
 <!-- AdminLTE for demo purposes -->
 <?php echo $this->fetch('script'); ?>
 <?php echo $this->fetch('scriptBottom'); ?>
@@ -103,7 +96,7 @@
         }).css("width", "100%");
 
         var a = $('a[href="<?php echo $this->request->webroot . $this->request->url ?>"]');
-        if (!a.parent().hasClass('treeview')) {
+        if (!a.parent().hasClass('treeview') && !a.parent().parent().hasClass('pagination')) {
             a.parent().addClass('active').parents('.treeview').addClass('active');
         }
     });
