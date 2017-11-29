@@ -25,6 +25,7 @@ Plugin::load('AdminLTE', ['bootstrap' => true, 'routes' => true]);
 public function beforeRender(Event $event)
 {
     $this->viewBuilder()->theme('AdminLTE');
+    $this->viewBuilder()->layout('material-design');
 }
 ```
 
