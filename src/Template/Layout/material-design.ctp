@@ -20,8 +20,9 @@
     <?php echo $this->Html->css('AdminLTE.ripples.min'); ?>
     <?php echo $this->Html->css('AdminLTE.MaterialAdminLTE.min'); ?>
     <!-- MaterialAdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. --> 
-	<?php echo $this->Html->css('AdminLTE.skins/all-md-skins.min'); ?>
+       folder instead of downloading all of them to reduce the load.  
+	<?php echo $this->Html->css('AdminLTE.skins/all-md-skins.min'); ?>-->
+	<?php echo $this->Html->css('AdminLTE.skins/skin-material-'.Configure::read('Theme.skin')); ?>
 	
     <?php echo $this->fetch('css'); ?>
 
