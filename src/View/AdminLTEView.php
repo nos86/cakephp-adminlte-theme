@@ -1,11 +1,11 @@
 <?php
 namespace AdminLTE\View;
 
-use \Cake\View\View;
+use \App\View\AppView;
 use \Cake\Core\App;
 use \Cake\Utility\Inflector;
 
-class AdminLTEView extends View
+class AdminLTEView extends AppView
 {
     protected function _paths($plugin = null, $cached = true)
     {
@@ -35,7 +35,6 @@ class AdminLTEView extends View
                 $themePaths[] = $templateCurrent . 'Plugin'.  DIRECTORY_SEPARATOR . $theme . DIRECTORY_SEPARATOR;
             }
         }
-
         $paths = array_merge(
             $pluginPaths,
             $themePaths,
