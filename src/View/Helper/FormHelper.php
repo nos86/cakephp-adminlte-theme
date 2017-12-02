@@ -24,7 +24,7 @@ class FormHelper extends CakeFormHelper {
         'formEnd' => '</form>',
         'formGroup' => '{{label}}{{input}}',
         'hiddenBlock' => '<div style="display:none;">{{content}}</div>',
-        'input' => '<input type="{{type}}" name="{{name}}"{{attrs}}/>',
+        'input' => '<input type="{{type}}" name="{{name}}" {{attrs}}/>',
         'inputSubmit' => '<input type="{{type}}"{{attrs}}/>',
         'inputContainer' => '<div class="form-group input {{type}}{{required}}">{{content}}</div>',
         'inputContainerError' => '<div class="input {{type}}{{required}} error">{{content}}{{error}}</div>',
@@ -40,7 +40,7 @@ class FormHelper extends CakeFormHelper {
         'radio' => '<input type="radio" name="{{name}}" value="{{value}}"{{attrs}}>',
         'radioWrapper' => '<div class="radio">{{label}}</div>',
         'textarea' => '<textarea name="{{name}}"{{attrs}}>{{value}}</textarea>',
-        'submitContainer' => '<div class="box-footer {{required}}">{{content}}</div>'
+        'submitContainer' => '<div class="{{required}}">{{content}}</div>'
     ];
 
     public function __construct(View $View, array $config = [])
@@ -70,7 +70,6 @@ class FormHelper extends CakeFormHelper {
 
     public function input($fieldName, array $options = [])
     {
-
         $_options = [];
 
         if (!isset($options['type'])) {
